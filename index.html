@@ -1,76 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lotus Analytica</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Analytica - Innovating the Future with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* Slate 800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #64748b; /* Slate 500 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; /* Slate 400 */
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white font-sans">
-  <header class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-    <h1 class="text-3xl font-bold text-purple-400">Lotus Analytica</h1>
-    <nav class="space-x-6">
-      <a href="#services" class="hover:text-purple-300 transition">Services</a>
-      <a href="#about" class="hover:text-purple-300 transition">About</a>
-      <a href="#contact" class="hover:text-purple-300 transition">Contact</a>
+<body class="antialiased">
+    <div class="fixed top-4 right-4 z-50">
+        <button id="langToggle" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-75">
+            日本語 / English
+        </button>
+    </div>
+
+    <nav class="bg-slate-900 bg-opacity-90 backdrop-blur-sm shadow-lg py-4 px-6 md:px-12 sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <svg class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-2xl font-extrabold text-white">Lotus Analytica</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-slate-300 hover:text-indigo-400 transition duration-300">
+                    <span class="lang-en">Home</span>
+                    <span class="lang-jp hidden">ホーム</span>
+                </a>
+                <a href="#services" class="text-slate-300 hover:text-indigo-400 transition duration-300">
+                    <span class="lang-en">Services</span>
+                    <span class="lang-jp hidden">サービス</span>
+                </a>
+                <a href="#about" class="text-slate-300 hover:text-indigo-400 transition duration-300">
+                    <span class="lang-en">About Us</span>
+                    <span class="lang-jp hidden">会社概要</span>
+                </a>
+                <a href="#contact" class="text-slate-300 hover:text-indigo-400 transition duration-300">
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-jp hidden">お問い合わせ</span>
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="text-slate-300 hover:text-indigo-400 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="md:hidden mt-4 hidden">
+            <a href="#home" class="block py-2 px-4 text-slate-300 hover:bg-slate-800 rounded-md">
+                <span class="lang-en">Home</span>
+                <span class="lang-jp hidden">ホーム</span>
+            </a>
+            <a href="#services" class="block py-2 px-4 text-slate-300 hover:bg-slate-800 rounded-md">
+                <span class="lang-en">Services</span>
+                <span class="lang-jp hidden">サービス</span>
+            </a>
+            <a href="#about" class="block py-2 px-4 text-slate-300 hover:bg-slate-800 rounded-md">
+                <span class="lang-en">About Us</span>
+                <span class="lang-jp hidden">会社概要</span>
+            </a>
+            <a href="#contact" class="block py-2 px-4 text-slate-300 hover:bg-slate-800 rounded-md">
+                <span class="lang-en">Contact</span>
+                <span class="lang-jp hidden">お問い合わせ</span>
+            </a>
+        </div>
     </nav>
-  </header>
 
-  <section class="text-center py-32 px-4">
-    <h2 class="text-5xl md:text-6xl font-extrabold mb-6">Building the Future of Medical AI</h2>
-    <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-      At Lotus Analytica, we craft cutting-edge AI and computer vision solutions tailored to revolutionize healthcare and life sciences.
-    </p>
-    <div class="mt-10">
-      <a href="#contact" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200">
-        Get in Touch
-      </a>
-    </div>
-  </section>
-
-  <section id="services" class="py-24 px-6 bg-gray-900">
-    <div class="max-w-6xl mx-auto text-center">
-      <h3 class="text-4xl font-bold mb-12 text-purple-300">Our Expertise</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h4 class="text-2xl font-semibold mb-4">AI Tooling</h4>
-          <p class="text-gray-400">Custom-built machine learning and deep learning frameworks for clinical and research applications.</p>
+    <section id="home" class="relative overflow-hidden py-20 md:py-32 text-center bg-gradient-to-br from-slate-900 to-indigo-900">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+            <div class="absolute top-1/2 right-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-sky-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h4 class="text-2xl font-semibold mb-4">Computer Vision</h4>
-          <p class="text-gray-400">Advanced visual recognition systems for diagnostics, imaging, and automated medical workflows.</p>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white mb-6 drop-shadow-lg">
+                <span class="lang-en">Innovating the Future with <span class="text-indigo-400">AI</span>, <span class="text-purple-400">Vision</span>, and <span class="text-sky-400">Medical Intelligence</span></span>
+                <span class="lang-jp hidden">
+                    <span class="text-indigo-400">AI</span>、<span class="text-purple-400">ビジョン</span>、<span class="text-sky-400">医療知能</span>で未来を革新する
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-3xl mx-auto">
+                <span class="lang-en">Lotus Analytica is at the forefront of technological innovation, specializing in artificial intelligence, computer vision, and medical software development. We empower businesses and healthcare providers with intelligent solutions that drive progress and improve lives.</span>
+                <span class="lang-jp hidden">
+                    Lotus Analyticaは、人工知能、コンピュータビジョン、医療ソフトウェア開発を専門とする技術革新の最前線にいます。私たちは、進歩を促進し、生活を改善するインテリジェントなソリューションで企業や医療提供者を支援します。
+                </span>
+            </p>
+            <a href="#contact" class="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-semibold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-75">
+                <span class="lang-en">Get in Touch</span>
+                <span class="lang-jp hidden">お問い合わせ</span>
+            </a>
         </div>
-        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg">
-          <h4 class="text-2xl font-semibold mb-4">Medical Code & Systems</h4>
-          <p class="text-gray-400">High-reliability, scalable software built for compliance, performance, and real-world healthcare challenges.</p>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-slate-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">
+                <span class="lang-en">Our Core Expertise</span>
+                <span class="lang-jp hidden">私たちの専門分野</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700 transform hover:scale-105 transition duration-300 ease-in-out group">
+                    <div class="text-indigo-400 mb-6 text-5xl text-center">
+                        <svg class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9.75 9.75m0 0l-2.25 2.25M9.75 9.75l6.045-4.446M19.5 4.5l-1.5 1.5m-11.487 3.987L2.25 9.75m7.5 0l-.915-1.568M11.25 12l2.25 2.25m-2.25-2.25l-6-6m1.5 1.5l1.5 1.5m1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5M12 12l2.25 2.25m-2.25-2.25l6-6m-1.5 1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5M12 12l-2.25 2.25m2.25-2.25l-6-6m1.5 1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5m-1.5-1.5l1.5 1.5M12 12l-2.25-2.25m2.25 2.25l6 6m-1.5-1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5M12 12l2.25-2.25m-2.25 2.25l-6-6m1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5m-1.5 1.5l1.5-1.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-4 text-center">
+                        <span class="lang-en">AI Tools Development</span>
+                        <span class="lang-jp hidden">AIツール開発</span>
+                    </h3>
+                    <p class="text-slate-400 text-center">
+                        <span class="lang-en">We engineer cutting-edge AI solutions for complex challenges, from natural language processing to predictive analytics, driving efficiency and innovation.</span>
+                        <span class="lang-jp hidden">自然言語処理から予測分析まで、複雑な課題に対する最先端のAIソリューションを開発し、効率性とイノベーションを推進します。</span>
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700 transform hover:scale-105 transition duration-300 ease-in-out group">
+                    <div class="text-purple-400 mb-6 text-5xl text-center">
+                        <svg class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-4 text-center">
+                        <span class="lang-en">Computer Vision Solutions</span>
+                        <span class="lang-jp hidden">コンピュータビジョンソリューション</span>
+                    </h3>
+                    <p class="text-slate-400 text-center">
+                        <span class="lang-en">We develop advanced visual intelligence systems for insightful analysis, object recognition, and automated inspection across various industries.</span>
+                        <span class="lang-jp hidden">さまざまな業界で、洞察に満ちた分析、物体認識、自動検査のための高度な視覚インテリジェンスシステムを開発しています。</span>
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-xl shadow-2xl border border-slate-700 transform hover:scale-105 transition duration-300 ease-in-out group">
+                    <div class="text-sky-400 mb-6 text-5xl text-center">
+                        <svg class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002.944 12c0 2.893.978 5.684 2.72 7.94a12.007 12.007 0 0015.336 0c1.742-2.256 2.72-5.047 2.72-7.94a12.007 12.007 0 00-2.944-8.618z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-white mb-4 text-center">
+                        <span class="lang-en">Medical Software Development</span>
+                        <span class="lang-jp hidden">医療ソフトウェア開発</span>
+                    </h3>
+                    <p class="text-slate-400 text-center">
+                        <span class="lang-en">Transforming healthcare with intelligent and reliable software for diagnostics, patient management, and research, ensuring compliance and precision.</span>
+                        <span class="lang-jp hidden">診断、患者管理、研究のためのインテリジェントで信頼性の高いソフトウェアでヘルスケアを変革し、コンプライアンスと精度を確保します。</span>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="py-24 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <h3 class="text-4xl font-bold text-purple-300 mb-6">Who We Are</h3>
-      <p class="text-lg text-gray-300">
-        Lotus Analytica is a team of developers, researchers, and engineers dedicated to solving complex medical problems through elegant code and innovative artificial intelligence. We partner with institutions and startups alike to push the boundaries of what’s possible in digital health.
-      </p>
-    </div>
-  </section>
+    <section id="about" class="py-16 md:py-24 bg-slate-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                <span class="lang-en">About Lotus Analytica</span>
+                <span class="lang-jp hidden">Lotus Analyticaについて</span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-4xl mx-auto mb-8">
+                <span class="lang-en">At Lotus Analytica, we believe in the power of innovation to solve humanity's most pressing challenges. Our team of expert engineers and researchers is dedicated to pushing the boundaries of artificial intelligence and computer vision to create impactful solutions, particularly in the critical field of medical technology. We are committed to delivering excellence, fostering collaboration, and building a future where technology serves to enhance every aspect of life.</span>
+                <span class="lang-jp hidden">Lotus Analyticaでは、人類の最も差し迫った課題を解決するイノベーションの力を信じています。当社の専門エンジニアと研究者のチームは、人工知能とコンピュータビジョンの限界を押し広げ、特に医療技術の重要な分野で影響力のあるソリューションを生み出すことに専念しています。私たちは卓越性を提供し、コラボレーションを促進し、テクノロジーがあらゆる生活の側面を向上させる未来を築くことにコミットしています。</span>
+            </p>
+            <a href="#contact" class="inline-block px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-75">
+                <span class="lang-en">Join Our Journey</span>
+                <span class="lang-jp hidden">私たちの旅に参加する</span>
+            </a>
+        </div>
+    </section>
 
-  <section id="contact" class="py-24 px-6 bg-gray-900">
-    <div class="max-w-xl mx-auto text-center">
-      <h3 class="text-4xl font-bold text-purple-300 mb-6">Let's Work Together</h3>
-      <p class="text-gray-400 mb-8">
-        Whether you’re building the next generation of medical diagnostics or need a trusted AI partner, we’d love to hear from you.
-      </p>
-      <a href="mailto:contact@lotusanalytica.com" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition-all duration-200">
-        contact@lotusanalytica.com
-      </a>
-    </div>
-  </section>
+    <section id="contact" class="py-16 md:py-24 bg-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                <span class="lang-en">Let's Build the Future Together</span>
+                <span class="lang-jp hidden">共に未来を築きましょう</span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10">
+                <span class="lang-en">Have a project in mind or want to learn more about our capabilities? Reach out to us.</span>
+                <span class="lang-jp hidden">プロジェクトについてご相談したい、または当社の能力について詳しく知りたいですか？お気軽にお問い合わせください。</span>
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="mailto:info@lotusanalytica.com" class="inline-block px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white text-lg font-semibold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-sky-500 focus:ring-opacity-75">
+                    <span class="lang-en">Email Us</span>
+                    <span class="lang-jp hidden">メールでのお問い合わせ</span>
+                </a>
+                <a href="tel:+1234567890" class="inline-block px-8 py-4 bg-transparent border-2 border-sky-600 hover:bg-sky-600 text-sky-300 hover:text-white text-lg font-semibold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-sky-500 focus:ring-opacity-75">
+                    <span class="lang-en">Call Us</span>
+                    <span class="lang-jp hidden">お電話でのお問い合わせ</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  <footer class="text-center py-6 text-gray-500 text-sm">
-    &copy; <script>document.write(new Date().getFullYear())</script> Lotus Analytica. All rights reserved.
-  </footer>
+    <footer class="bg-slate-900 py-8 px-6 md:px-12 text-center text-slate-400">
+        <div class="container mx-auto">
+            <p>&copy; 2023 Lotus Analytica. All rights reserved.</p>
+            <p class="mt-2">
+                <span class="lang-en">Innovating for a smarter, healthier future.</span>
+                <span class="lang-jp hidden">よりスマートで健康的な未来のためにイノベーションを。</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Language Toggle
+        const langToggle = document.getElementById('langToggle');
+        const html = document.documentElement;
+        let isEnglish = true; // Initial state
+
+        langToggle.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            html.lang = isEnglish ? 'en' : 'ja';
+
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', !isEnglish);
+            });
+            document.querySelectorAll('.lang-jp').forEach(el => {
+                el.classList.toggle('hidden', isEnglish);
+            });
+        });
+
+        // JavaScript for Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
