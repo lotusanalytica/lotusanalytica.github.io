@@ -30,6 +30,7 @@
    * Initialize all functionality
    */
   function init() {
+    handleLanguageRedirect();
     setupDarkMode();
     setupHeader();
     setupMobileMenu();
@@ -42,6 +43,52 @@
     setupKonamiCode();
     setupRippleEffect();
     setup3DTiltEffect();
+  }
+
+  /**
+   * Handle automatic language redirect based on browser language
+   * Respects manual user choice stored in localStorage
+   */
+  function handleLanguageRedirect() {
+    const currentPath = window.location.pathname;
+    const isJapanesePage = currentPath.startsWith('/ja/') || currentPath === '/ja';
+    const isEnglishPage = !isJapanesePage;
+
+    // Check if user has manually selected a language
+    const userLangPreference = localStorage.getItem('preferredLanguage');
+
+    // If user has a preference, don't auto-redirect
+    if (userLangPreference) {
+      return;
+    }
+
+    // Get browser language
+    const browserLang = navigator.language || navigator.userLanguage;
+    const isJapaneseBrowser = browserLang.toLowerCase().startsWith('ja');
+
+    // Only redirect on first visit (no preference set)
+    // Redirect Japanese browsers to Japanese pages if they're on English pages
+    if (isJapaneseBrowser && isEnglishPage) {
+      // Build the Japanese URL
+      let jaPath = '/ja' + currentPath;
+      if (currentPath === '/') {
+        jaPath = '/ja/index.html';
+      } else if (currentPath === '/index.html') {
+        jaPath = '/ja/index.html';
+      }
+
+      // Set preference before redirect to prevent loop
+      localStorage.setItem('preferredLanguage', 'ja');
+      window.location.href = jaPath;
+      return;
+    }
+
+    // Set default preference based on current page
+    if (isJapanesePage) {
+      localStorage.setItem('preferredLanguage', 'ja');
+    } else {
+      localStorage.setItem('preferredLanguage', 'en');
+    }
   }
 
   /**
@@ -261,6 +308,9 @@
     const currentPath = window.location.pathname;
     const currentPage = getCurrentPage(currentPath);
     let newPath;
+
+    // Save the user's manual language preference
+    localStorage.setItem('preferredLanguage', targetLang);
 
     if (targetLang === 'ja') {
       // Switch to Japanese
