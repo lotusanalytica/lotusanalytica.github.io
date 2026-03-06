@@ -34,7 +34,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css?v=20260307e">
+  <link rel="stylesheet" href="/css/style.css?v=20260307h">
 </head>
 <body class="ja">
   <!-- Header -->
@@ -84,7 +84,7 @@
       <div class="section-header">
         <span class="section-label">研究実績</span>
         <h1>研究 & プロジェクト</h1>
-        <p>厳密な学術研究を本番環境対応ソリューションに変換。当社の研究がクライアントに提供する最適化を推進しています。</p>
+        <p>厳密な学術研究を本番環境対応<span class="nowrap">ソリューション</span>に変換。当社の研究が<span class="nowrap">クライアント</span>に提供する最適化を推進しています。</p>
       </div>
     </div>
   </section>
@@ -95,7 +95,7 @@
       <div class="section-header">
         <span class="section-label">注目の研究</span>
         <h2>グラフクエリ性能分析</h2>
-        <p>最新のデータベースシステム間における可変長パスクエリ実行の包括的比較。</p>
+        <p>最新の<span class="nowrap">データベース</span><span class="nowrap">システム</span>間における可変長<span class="nowrap">パスクエリ</span>実行の包括的比較。</p>
       </div>
 
       <div class="research-card animate-on-scroll">
@@ -103,17 +103,17 @@
           <img src="/images/benchmark-graph.jpg" alt="性能比較チャート">
         </div>
         <div class="research-content">
-          <h3>正規パスクエリ性能評価：Graph DB vs RDBMS</h3>
+          <h3>正規<span class="nowrap">パスクエリ</span>性能評価：Graph DB vs RDBMS</h3>
           <div class="research-meta">
             <span>2026年</span>
             <span>データベースシステム</span>
             <span>14ページ</span>
           </div>
           <p>
-            本研究では、MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xの5つの最新データベースシステムにおける正規パスクエリ（RPQ）実行性能の厳密な比較を行いました。
+            本研究では、MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xの5つの最新<span class="nowrap">データベース</span><span class="nowrap">システム</span>における正規<span class="nowrap">パスクエリ</span>（RPQ）実行性能の厳密な比較を行いました。
           </p>
           <p>
-            100万以上のトリプルを含むYAGO2s知識グラフデータセットを使用し、単純な1ホップクエリから複雑な9ホップの探索まで、9段階のパス複雑度にわたるクエリ性能を評価しました。
+            100万以上の<span class="nowrap">トリプル</span>を含むYAGO2s知識<span class="nowrap">グラフデータセット</span>を使用し、単純な1<span class="nowrap">ホップクエリ</span>から複雑な9<span class="nowrap">ホップ</span>の探索まで、9段階のパス複雑度にわたる<span class="nowrap">クエリ</span>性能を評価しました。
           </p>
         </div>
       </div>
@@ -123,19 +123,19 @@
         <div class="feature-card animate-on-scroll">
           <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">41.5倍</h3>
           <h4>高速化率</h4>
-          <p>Neo4jは複雑なパスクエリにおいて、最新のSQLデータベースと比較して最大41.5倍の性能向上を実証しました。</p>
+          <p>Neo4jは複雑な<span class="nowrap">パスクエリ</span>において、最新のSQL<span class="nowrap">データベース</span>と比較して最大41.5倍の性能向上を実証しました。</p>
         </div>
 
         <div class="feature-card animate-on-scroll">
           <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">100万+</h3>
           <h4>知識グラフトリプル</h4>
-          <p>100万以上の実世界エンティティ関係を含むYAGO2sデータセットでテストを実施。</p>
+          <p>100万以上の実世界<span class="nowrap">エンティティ</span>関係を含むYAGO2s<span class="nowrap">データセット</span>で<span class="nowrap">テスト</span>を実施。</p>
         </div>
 
         <div class="feature-card animate-on-scroll">
           <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">5</h3>
           <h4>データベースシステム</h4>
-          <p>MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xを対象とした包括的ベンチマーク。</p>
+          <p>MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xを対象とした包括的<span class="nowrap">ベンチマーク</span>。</p>
         </div>
       </div>
 
@@ -148,7 +148,7 @@
         <ul style="margin-left: 20px; color: var(--gray-600); margin-top: 16px;">
           <li><strong>コンテナ化環境：</strong> Dockerベースのテストにより、すべてのデータベースシステムで一貫した実行条件を確保。</li>
           <li><strong>動的データ生成：</strong> カスタムデータジェネレータにより、複雑度レベルを制御した一貫性のあるテストデータセットを生成。</li>
-          <li><strong>クエリ複雑度スケーリング：</strong> 1ホップから9ホップまでの9段階のパスクエリにより、様々な探索深度での性能をテスト。</li>
+          <li><strong><span class="nowrap">クエリ</span>複雑度<span class="nowrap">スケーリング</span>：</strong> 1<span class="nowrap">ホップ</span>から9<span class="nowrap">ホップ</span>までの9段階の<span class="nowrap">パスクエリ</span>により、様々な探索深度での性能を<span class="nowrap">テスト</span>。</li>
           <li><strong>補正定数：</strong> 公正な比較を確保するため、システム固有のオーバーヘッドを考慮した統計分析。</li>
           <li><strong>再現性：</strong> すべてのテスト構成とデータ生成スクリプトを検証用にドキュメント化。</li>
         </ul>
@@ -341,7 +341,7 @@
             <img src="/images/logo-icon.png" alt="Lotus Analytica" class="logo-icon">
             <span>Lotus Analytica</span>
           </div>
-          <p>研究駆動型のデータベース最適化とセキュアAIシステムエンジニアリング。</p>
+          <p>研究駆動型の<span class="nowrap">データベース</span>最適化と<span class="nowrap">セキュア</span>AI<span class="nowrap">システム</span><span class="nowrap">エンジニアリング</span>。</p>
         </div>
 
         <div class="footer-col">
@@ -379,6 +379,6 @@
     </div>
   </footer>
 
-  <script src="/js/main.js?v=20260307e"></script>
+  <script src="/js/main.js?v=20260307h"></script>
 </body>
 </html>

@@ -160,14 +160,32 @@ body.ja {
 }
 
 /*
- * Japanese Typography - Use word-break: auto-phrase for natural breaks
- * Falls back to keep-all for browsers that don't support auto-phrase
+ * Japanese Typography - Prevent mid-word breaks
+ * Uses word-break: keep-all as the primary method
  */
 body.ja {
   word-break: keep-all;
   line-break: strict;
   overflow-wrap: break-word;
-  word-break: auto-phrase; /* Chrome 119+, modern browsers */
+}
+
+/* For paragraphs and text content, allow breaks at natural points only */
+body.ja p,
+body.ja li,
+body.ja h1,
+body.ja h2,
+body.ja h3,
+body.ja h4,
+body.ja td,
+body.ja .hero-subtitle,
+body.ja .team-bio,
+body.ja .feature-card p,
+body.ja .research-content p,
+body.ja .cta-content p,
+body.ja .section-header p {
+  word-break: keep-all;
+  line-break: strict;
+  overflow-wrap: break-word;
 }
 
 /* Buttons and nav links should never break */
@@ -186,10 +204,27 @@ body.ja option {
 
 /* No-wrap utility - text inside CANNOT break */
 .nowrap {
-  display: inline-block !important;
+  display: inline !important;
   white-space: nowrap !important;
   word-break: keep-all !important;
   overflow-wrap: normal !important;
+  line-break: strict !important;
+}
+
+/* Higher specificity for Japanese pages */
+body.ja .nowrap,
+body.ja p .nowrap,
+body.ja li .nowrap,
+body.ja h1 .nowrap,
+body.ja h2 .nowrap,
+body.ja h3 .nowrap,
+body.ja h4 .nowrap,
+body.ja td .nowrap {
+  display: inline !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  line-break: strict !important;
 }
 
 /* Typography */
