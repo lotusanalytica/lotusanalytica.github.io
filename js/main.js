@@ -30,6 +30,7 @@
    * Initialize all functionality
    */
   function init() {
+    setupDarkMode();
     setupHeader();
     setupMobileMenu();
     setupLanguageSwitcher();
@@ -41,6 +42,40 @@
     setupKonamiCode();
     setupRippleEffect();
     setup3DTiltEffect();
+  }
+
+  /**
+   * Dark mode functionality
+   */
+  function setupDarkMode() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (!themeToggle) return;
+
+    // Check for saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    });
   }
 
   /**
