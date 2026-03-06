@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary Meta Tags -->
+  <title>研究実績 | Lotus Analytica - データベース & グラフクエリ研究</title>
+  <meta name="title" content="研究実績 | Lotus Analytica">
+  <meta name="description" content="Lotus Analyticaの研究実績：41.5倍の高速化を実証するグラフクエリ性能分析、YAGO2sデータセットを使用したデータベースベンチマーク、医療AIシステム、科学ソフトウェア開発。">
+  <meta name="keywords" content="グラフデータベース研究, Neo4j性能, MySQLベンチマーク, YAGO2s, 正規パスクエリ, RPQ, データベース比較, 医療AI, 結晶画像分析">
+  <meta name="author" content="株式会社 Lotus Analytica">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lotusanalytica.com/ja/research.html">
+  <meta property="og:title" content="研究実績 | Lotus Analytica">
+  <meta property="og:description" content="グラフクエリ性能研究、医療AIシステム、データベースベンチマーク研究。">
+  <meta property="og:image" content="https://lotusanalytica.com/images/og-image.png">
+
+  <!-- Canonical & Alternate Languages -->
+  <link rel="canonical" href="https://lotusanalytica.com/ja/research.html">
+  <link rel="alternate" hreflang="en" href="https://lotusanalytica.com/research.html">
+  <link rel="alternate" hreflang="ja" href="https://lotusanalytica.com/ja/research.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="ja">
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/ja/" class="logo">
+          <img src="/images/logo-icon.png" alt="Lotus Analytica" class="logo-icon">
+          <span>Lotus Analytica</span>
+        </a>
+
+        <nav class="nav">
+          <a href="/ja/" class="nav-link">ホーム</a>
+          <a href="/ja/about.html" class="nav-link">会社概要</a>
+          <a href="/ja/services.html" class="nav-link">サービス</a>
+          <a href="/ja/research.html" class="nav-link active">研究実績</a>
+          <a href="/ja/team.html" class="nav-link">チーム</a>
+          <a href="/ja/contact.html" class="nav-link">お問い合わせ</a>
+
+          <div class="lang-switch">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn active" data-lang="ja">JP</button>
+          </div>
+        </nav>
+
+        <button class="menu-toggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Research Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">研究実績</span>
+        <h1>研究 & プロジェクト</h1>
+        <p>厳密な学術研究を本番環境対応ソリューションに変換。当社の研究がクライアントに提供する最適化を推進しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Research -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">注目の研究</span>
+        <h2>グラフクエリ性能分析</h2>
+        <p>最新のデータベースシステム間における可変長パスクエリ実行の包括的比較。</p>
+      </div>
+
+      <div class="research-card animate-on-scroll">
+        <div class="research-image">
+          <img src="/images/benchmark-graph.jpg" alt="性能比較チャート">
+        </div>
+        <div class="research-content">
+          <h3>正規パスクエリ性能評価：Graph DB vs RDBMS</h3>
+          <div class="research-meta">
+            <span>2026年</span>
+            <span>データベースシステム</span>
+            <span>14ページ</span>
+          </div>
+          <p>
+            本研究では、MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xの5つの最新データベースシステムにおける正規パスクエリ（RPQ）実行性能の厳密な比較を行いました。
+          </p>
+          <p>
+            100万以上のトリプルを含むYAGO2s知識グラフデータセットを使用し、単純な1ホップクエリから複雑な9ホップの探索まで、9段階のパス複雑度にわたるクエリ性能を評価しました。
+          </p>
+        </div>
+      </div>
+
+      <!-- Key Findings -->
+      <div class="features-grid" style="margin-top: 60px;">
+        <div class="feature-card animate-on-scroll">
+          <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">41.5倍</h3>
+          <h4>高速化率</h4>
+          <p>Neo4jは複雑なパスクエリにおいて、最新のSQLデータベースと比較して最大41.5倍の性能向上を実証しました。</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">100万+</h3>
+          <h4>知識グラフトリプル</h4>
+          <p>100万以上の実世界エンティティ関係を含むYAGO2sデータセットでテストを実施。</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <h3 style="font-size: 2.5rem; color: var(--accent); margin-bottom: 8px;">5</h3>
+          <h4>データベースシステム</h4>
+          <p>MySQL 8.0、MySQL 5.7、MariaDB 10.3、MongoDB 6.0、Neo4j 5.xを対象とした包括的ベンチマーク。</p>
+        </div>
+      </div>
+
+      <!-- Methodology -->
+      <div style="margin-top: 80px;">
+        <h3>研究方法論</h3>
+        <p style="max-width: 800px;">
+          当社のベンチマーク方法論は、データベースシステム間で再現可能かつ公正な比較を保証します：
+        </p>
+        <ul style="margin-left: 20px; color: var(--gray-600); margin-top: 16px;">
+          <li><strong>コンテナ化環境：</strong> Dockerベースのテストにより、すべてのデータベースシステムで一貫した実行条件を確保。</li>
+          <li><strong>動的データ生成：</strong> カスタムデータジェネレータにより、複雑度レベルを制御した一貫性のあるテストデータセットを生成。</li>
+          <li><strong>クエリ複雑度スケーリング：</strong> 1ホップから9ホップまでの9段階のパスクエリにより、様々な探索深度での性能をテスト。</li>
+          <li><strong>補正定数：</strong> 公正な比較を確保するため、システム固有のオーバーヘッドを考慮した統計分析。</li>
+          <li><strong>再現性：</strong> すべてのテスト構成とデータ生成スクリプトを検証用にドキュメント化。</li>
+        </ul>
+      </div>
+
+      <!-- Key Conclusions -->
+      <div style="margin-top: 60px; padding: 40px; background: var(--gray-50); border-radius: 16px;">
+        <h3>主要な結論</h3>
+        <ol style="margin-left: 20px; color: var(--gray-600); margin-top: 16px;">
+          <li style="margin-bottom: 12px;"><strong>アーキテクチャが重要：</strong> ネイティブグラフデータベースアーキテクチャは、リレーショナルシステムのクエリ最適化だけでは再現できない、パス指向クエリに対する大きな優位性を提供します。</li>
+          <li style="margin-bottom: 12px;"><strong>スケーリング挙動：</strong> クエリの複雑度が増すにつれて性能差は劇的に拡大し、リレーショナルシステムは5ホップクエリを超えると指数関数的な劣化を示します。</li>
+          <li style="margin-bottom: 12px;"><strong>実用的な影響：</strong> 重要なグラフ探索を含むワークロードでは、ネイティブグラフデータベースへの移行により桁違いの改善が得られる可能性があります。</li>
+          <li><strong>ハイブリッドアプローチ：</strong> 多くの本番システムでは、関係性の重いクエリにグラフデータベースを使用し、トランザクションワークロードにはリレーショナルシステムを維持することで恩恵を受けます。</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Projects -->
+  <section class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">応用研究</span>
+        <h2>クライアントプロジェクト</h2>
+        <p>医療、学術、産業パートナー向けに研究を本番ソフトウェアに変換。</p>
+      </div>
+
+      <!-- Medical Institution Project -->
+      <div class="research-card animate-on-scroll">
+        <div class="research-image">
+          <img src="/images/hospital-portal.png" alt="医療AIプラットフォーム">
+        </div>
+        <div class="research-content">
+          <h3>患者アフターケアのための医療AIプラットフォーム</h3>
+          <div class="research-meta">
+            <span>2026年</span>
+            <span>医療テクノロジー</span>
+            <span>医療機関</span>
+          </div>
+          <p>
+            リハビリ療法を専門とする医療機関向けの包括的なオンラインプラットフォーム開発。AI駆動のアフターケアにより、医師や療法士の負担を軽減しながら患者の治療成果を向上させます。
+          </p>
+          <p><strong>主要機能：</strong></p>
+          <ul style="margin-left: 20px; color: var(--gray-600);">
+            <li><strong>AIリハビリスケジューリング：</strong> 患者の特性と治療履歴に基づく機械学習による自動リハビリスケジュール作成</li>
+            <li><strong>治療効果分析：</strong> SHAP値分析を用いたMLモデルによる治療効果の定量化と患者転帰の予測</li>
+            <li><strong>セキュアAIチャットボット：</strong> 機密医療データを外部サービスに露出させない、オンプレミスLLM展開による患者ガイダンス</li>
+            <li><strong>統合コミュニケーション：</strong> 定期的な自動チェックインを含む、患者と医療スタッフ間のセキュアメッセージング</li>
+            <li><strong>ロールベースアクセス制御：</strong> きめ細かいデータアクセス権限を持つ3層ユーザーシステム（患者、スタッフ、管理者）</li>
+          </ul>
+          <div class="research-tags">
+            <span class="tag">医療AI</span>
+            <span class="tag">機械学習</span>
+            <span class="tag">オンプレミスLLM</span>
+            <span class="tag">患者データセキュリティ</span>
+            <span class="tag">SHAP分析</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Crystal Analysis Project -->
+      <div class="research-card animate-on-scroll">
+        <div class="research-image">
+          <img src="/images/crystal-research.png" alt="結晶分析">
+        </div>
+        <div class="research-content">
+          <h3>結晶画像分析ソフトウェア</h3>
+          <div class="research-meta">
+            <span>2026年</span>
+            <span>科学ソフトウェア</span>
+            <span>大阪大学</span>
+          </div>
+          <p>
+            大阪大学大学院工学研究科の丸山美帆子教授研究グループ向けの専門画像分析ソフトウェア開発。
+          </p>
+          <p>
+            本ソフトウェアは、シュウ酸カルシウム結晶の顕微鏡画像の自動分析を可能にし、結晶相（COMとCOD）の分類とサイズ分布の測定を行い、材料科学研究を支援します。
+          </p>
+          <p><strong>主要機能：</strong></p>
+          <ul style="margin-left: 20px; color: var(--gray-600);">
+            <li>機械学習を用いた自動結晶相分類</li>
+            <li>サイズ分布分析と統計レポート</li>
+            <li>大規模画像データセットのバッチ処理</li>
+            <li>実験室顕微鏡システムとの統合</li>
+          </ul>
+          <div class="research-tags">
+            <span class="tag">画像分析</span>
+            <span class="tag">機械学習</span>
+            <span class="tag">材料科学</span>
+            <span class="tag">大阪大学</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benchmarking System -->
+      <div class="research-card animate-on-scroll">
+        <div class="research-image">
+          <img src="/images/database-architecture.jpg" alt="データベースベンチマークシステム">
+        </div>
+        <div class="research-content">
+          <h3>コンテナ化データベースベンチマークシステム</h3>
+          <div class="research-meta">
+            <span>2026年</span>
+            <span>DevOps & テスト</span>
+          </div>
+          <p>
+            再現可能なデータベース性能テストのための包括的なDockerベースのベンチマークインフラ。多様なデータベースアーキテクチャ間の公正な比較を可能にします。
+          </p>
+          <p><strong>システムコンポーネント：</strong></p>
+          <ul style="margin-left: 20px; color: var(--gray-600);">
+            <li>マルチデータベース環境のためのDocker Composeオーケストレーション</li>
+            <li>複雑度を設定可能な自動データ生成</li>
+            <li>統計分析を伴うクエリ実行タイミング</li>
+            <li>結果集計と可視化ツール</li>
+            <li>再現可能なテストのための構成管理</li>
+          </ul>
+          <div class="research-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">ベンチマーク</span>
+            <span class="tag">データベーステスト</span>
+            <span class="tag">DevOps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">研究領域</span>
+        <h2>研究の方向性</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3>グラフデータベースシステム</h3>
+          <p>複雑な関係性の重いワークロード向けの、グラフクエリ最適化、探索アルゴリズム、ハイブリッドデータベースアーキテクチャに関する継続的研究。</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h3>医療AI</h3>
+          <p>医療機関向けのセキュアAI展開、患者転帰予測、機械学習を用いた治療最適化に関する研究。</p>
+        </div>
+
+        <div class="feature-card animate-on-scroll">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3>科学計算</h3>
+          <p>学術研究アプリケーション向けの画像分析、自動分類システム、専門ソフトウェアツールにおける応用研究。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>研究コラボレーションに興味がありますか？</h2>
+        <p>学術機関、医療施設、研究所と最先端のプロジェクトでパートナーシップを組んでいます。</p>
+        <a href="/ja/contact.html" class="btn btn-accent">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/images/logo-icon.png" alt="Lotus Analytica" class="logo-icon">
+            <span>Lotus Analytica</span>
+          </div>
+          <p>研究駆動型のデータベース最適化とセキュアAIシステムエンジニアリング。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">会社情報</h4>
+          <ul class="footer-links">
+            <li><a href="/ja/about.html">会社概要</a></li>
+            <li><a href="/ja/team.html">チーム</a></li>
+            <li><a href="/ja/research.html">研究実績</a></li>
+            <li><a href="/ja/contact.html">お問い合わせ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">サービス</h4>
+          <ul class="footer-links">
+            <li><a href="/ja/services.html">データベース最適化</a></li>
+            <li><a href="/ja/services.html">セキュアAIシステム</a></li>
+            <li><a href="/ja/services.html">研究コラボレーション</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">連絡先</h4>
+          <ul class="footer-links">
+            <li>広島県竹原市</li>
+            <li><a href="mailto:lotusanalytica@gmail.com">lotusanalytica@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 株式会社 Lotus Analytica. All rights reserved.</p>
+        <p class="footer-fun">沢山のコーヒーと深夜作業、そして後悔ゼロで作りました。</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

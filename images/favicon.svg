@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Gradient for center petals (purple to magenta) -->
+    <linearGradient id="centerGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#9333ea"/>
+      <stop offset="100%" style="stop-color:#c026d3"/>
+    </linearGradient>
+    <!-- Gradient for outer petals (cyan to blue) -->
+    <linearGradient id="outerGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#0f172a"/>
+
+  <!-- Outer petals (left and right) -->
+  <ellipse cx="22" cy="58" rx="18" ry="8" fill="url(#outerGrad)" transform="rotate(-25 22 58)"/>
+  <ellipse cx="78" cy="58" rx="18" ry="8" fill="url(#outerGrad)" transform="rotate(25 78 58)"/>
+
+  <!-- Middle petals -->
+  <ellipse cx="32" cy="52" rx="14" ry="7" fill="url(#centerGrad)" transform="rotate(-15 32 52)"/>
+  <ellipse cx="68" cy="52" rx="14" ry="7" fill="url(#centerGrad)" transform="rotate(15 68 52)"/>
+
+  <!-- Inner petals -->
+  <ellipse cx="40" cy="48" rx="12" ry="18" fill="url(#centerGrad)" transform="rotate(-8 40 48)"/>
+  <ellipse cx="60" cy="48" rx="12" ry="18" fill="url(#centerGrad)" transform="rotate(8 60 48)"/>
+
+  <!-- Center petal -->
+  <ellipse cx="50" cy="42" rx="10" ry="22" fill="url(#centerGrad)"/>
+</svg>
