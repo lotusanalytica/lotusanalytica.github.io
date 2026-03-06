@@ -157,54 +157,39 @@ body {
 
 body.ja {
   font-family: var(--font-jp);
-  /* Japanese typography - prevent incorrect word breaks */
+}
+
+/*
+ * Japanese Typography - Use word-break: auto-phrase for natural breaks
+ * Falls back to keep-all for browsers that don't support auto-phrase
+ */
+body.ja {
   word-break: keep-all;
+  line-break: strict;
   overflow-wrap: break-word;
-  line-break: strict;
+  word-break: auto-phrase; /* Chrome 119+, modern browsers */
 }
 
-/* Japanese text specific rules */
-:lang(ja) {
-  word-break: keep-all;
-  overflow-wrap: break-word;
-  line-break: strict;
-}
-
-/* Ensure headings don't break mid-word */
-:lang(ja) h1,
-:lang(ja) h2,
-:lang(ja) h3,
-:lang(ja) h4,
-:lang(ja) h5,
-:lang(ja) h6,
-body.ja h1,
-body.ja h2,
-body.ja h3,
-body.ja h4,
-body.ja h5,
-body.ja h6 {
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-  line-break: strict;
-}
-
-/* Buttons and nav links should not break */
-:lang(ja) .btn,
-:lang(ja) .nav-link,
+/* Buttons and nav links should never break */
 body.ja .btn,
-body.ja .nav-link {
-  word-break: keep-all;
+body.ja .nav-link,
+body.ja .lang-btn,
+body.ja .section-label,
+body.ja .tag,
+body.ja .timeline-date,
+body.ja .research-meta span,
+body.ja .footer-title,
+body.ja .form-label,
+body.ja option {
   white-space: nowrap;
 }
 
-/* Allow paragraphs to wrap more flexibly but still respect Japanese rules */
-:lang(ja) p,
-:lang(ja) li,
-body.ja p,
-body.ja li {
-  word-break: normal;
-  overflow-wrap: break-word;
-  line-break: strict;
+/* No-wrap utility - text inside CANNOT break */
+.nowrap {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
 }
 
 /* Typography */

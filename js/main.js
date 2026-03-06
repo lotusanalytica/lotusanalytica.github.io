@@ -43,6 +43,7 @@
     setupKonamiCode();
     setupRippleEffect();
     setup3DTiltEffect();
+    setupJapaneseLineBreaks();
   }
 
   /**
@@ -568,6 +569,99 @@
       card.addEventListener('mouseleave', function() {
         this.style.transform = '';
       });
+    });
+  }
+
+  /**
+   * Setup Japanese line breaks
+   * Uses simple rules to insert <wbr> tags at natural break points
+   * Break opportunities: after particles, punctuation, and between certain character types
+   */
+  function setupJapaneseLineBreaks() {
+    // Only run on Japanese pages
+    if (!document.body.classList.contains('ja')) return;
+
+    // Japanese particles and common break points
+    const particles = ['は', 'が', 'を', 'に', 'で', 'と', 'の', 'へ', 'や', 'も', 'から', 'まで', 'より', 'など', 'って', 'ば', 'たり', 'ながら', 'ので', 'のに', 'けど', 'けれど', 'し', 'て', 'た', 'だ', 'です', 'ます', 'ません', 'ました', 'でした'];
+    const punctuation = ['、', '。', '！', '？', '」', '』', '）', '：', '；'];
+
+    /**
+     * Segment Japanese text into phrases
+     */
+    function segmentJapanese(text) {
+      if (!text || !text.match(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/)) {
+        return [text];
+      }
+
+      const segments = [];
+      let current = '';
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        current += char;
+
+        // Check for punctuation
+        if (punctuation.includes(char)) {
+          segments.push(current);
+          current = '';
+          continue;
+        }
+
+        // Check for particles (2-char particles first, then 1-char)
+        let foundParticle = false;
+        for (const p of particles) {
+          if (current.endsWith(p) && current.length > p.length) {
+            // Don't break if the particle is at the start of the segment
+            segments.push(current);
+            current = '';
+            foundParticle = true;
+            break;
+          }
+        }
+      }
+
+      if (current) {
+        segments.push(current);
+      }
+
+      return segments.filter(s => s.length > 0);
+    }
+
+    // Apply to text-containing elements
+    const selectors = [
+      '.section-header p',
+      '.hero-subtitle',
+      '.cta-content p',
+      '.footer-brand p',
+      '.contact-info > p',
+      '.about-content p',
+      '.research-content p:not(:has(strong))',
+      '.team-bio',
+      '.feature-card p',
+      '.service-item p',
+      '.timeline-item p'
+    ];
+
+    document.querySelectorAll(selectors.join(', ')).forEach(el => {
+      // Skip if already processed
+      if (el.dataset.jpProcessed) return;
+
+      // Skip elements with important child elements
+      if (el.querySelector('a, strong, em, code, br')) return;
+
+      // Skip if no Japanese text
+      if (!el.textContent.match(/[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/)) return;
+
+      el.dataset.jpProcessed = 'true';
+
+      const text = el.textContent;
+      const segments = segmentJapanese(text);
+
+      if (segments.length > 1) {
+        el.innerHTML = segments.map(seg =>
+          `<span class="jp-segment">${seg}</span>`
+        ).join('<wbr>');
+      }
     });
   }
 
