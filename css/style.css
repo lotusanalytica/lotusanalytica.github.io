@@ -1032,6 +1032,113 @@ a:hover {
   color: var(--gray-500);
 }
 
+/* Founder's Message Section */
+.founder-message-section {
+  background: var(--bg-primary);
+}
+
+.founder-message {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.founder-image {
+  position: sticky;
+  top: 120px;
+}
+
+.founder-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.founder-info {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.founder-info h4 {
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.founder-info p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.founder-content {
+  padding-top: 10px;
+}
+
+.founder-quote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 32px;
+  padding-left: 24px;
+  border-left: 4px solid var(--accent);
+  line-height: 1.5;
+}
+
+.founder-content p {
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+.founder-signature {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Dark mode for founder message */
+[data-theme="dark"] .founder-quote {
+  color: var(--primary-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .founder-quote {
+    color: var(--primary-light);
+  }
+}
+
+@media (max-width: 900px) {
+  .founder-message {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-image {
+    position: relative;
+    top: 0;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .founder-quote {
+    font-size: 1.25rem;
+  }
+
+  .founder-content p {
+    font-size: 1rem;
+  }
+}
+
 /* Services */
 .services-grid {
   display: grid;
